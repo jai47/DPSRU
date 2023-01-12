@@ -33,7 +33,7 @@ body .nav a .nav_logo span{
 
 
 body .form{
-    margin-top: 5vh;
+    margin: 5vh 0 5vh 0;
     background: rgb(255, 255, 255);
     display: flex;
     height: 70vh;
@@ -60,9 +60,52 @@ body .form .img{
     width: 35%;
     background: linear-gradient(90deg,rgba(0,0,0,0.5) 80%,rgba(0,0,0,0.5) 90%,#272727 99%,#272727 100%);
 }
-
 body .form form{
-    display: flex;
     margin: auto;
-    flex-direction: column;
+    width: 40%;
+    height: auto;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body .form form p{
+    font-size: 2.5vh;
+    padding: 1vh 0 1vh ;
+}
+
+form :where(input, button){
+    border: none;
+    border-radius: 0.5vh;
+    outline: none;
+    width: 100%;
+}
+
+body .form form input{
+    height: 6vh;
+    font-size: 3vh;
+    color: rgb(56, 56, 56);
+    padding: 0 0 0 1vh;
+    width: 97%;
+    border: 0.1vh solid rgb(32, 32, 32);
+}
+
+form .Name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.fName, .lName{
+    width: 48%;
+}
+
+body .form form button{
+    margin: 3vh 0 0 0;
+    height: 6vh;
+    background: #616161;
+    font-size: 2.5vh;
+    color: #fff;
+}
+
+body .form form button:hover{
+    background: #272727;
+    cursor: pointer;
 }

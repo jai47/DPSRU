@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="shortcut icon"
-            href="https://upload.wikimedia.org/wikipedia/en/0/04/Delhi_Pharmaceutical_Science_and_Research_University_logo.png"
-            type="image/x-icon">
-        <title>DAF | Registration</title>
-        <link rel="stylesheet" href="../style/style.css">
-        <link rel="stylesheet" href="../style/reg.css">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon"
+        href="https://upload.wikimedia.org/wikipedia/en/0/04/Delhi_Pharmaceutical_Science_and_Research_University_logo.png"
+        type="image/x-icon">
+    <title>DAF | Registration</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/reg.css">
+</head>
+
 <body>
-    
+
 
     <div class="moreOptions" id="popup">
         <i class='bx bx-x' onclick="showOptions()"></i>
@@ -91,14 +93,37 @@
 
 
     <div class="form">
-        <div class="bgGradient"></div>
+        <div class="bgGradient">
+            <h2 style="color: white; margin:100px; text-align:center;"><i>DAF  REGISTRATION <br> FORM</i></h2>
+        </div>
         <div class="img"></div>
         <form action="" method="post">
-            <input type="text" required>
-            <input type="text" required>
-            <input type="email" required name="" id="">
-            <input type="tel" required name="" id="">
-            <input type="date" required name="" id="">
+            <div class="Name">
+                <div class="fName">
+                    <p>First Name</p>
+                    <input type="text" required>
+                </div>
+                <div class="lName">
+                    <p>Last Name</p>
+                    <input type="text" required>
+                </div>
+            </div>
+            <div class="mail">
+                <p>Email</p>
+                <input type="email" required name="" id="">
+            </div>
+            <div class="mNo">
+                <p>Mobile Number</p>
+                <input type="tel" required name="" id="">
+            </div>
+            <div class="rNo">
+                <p>Roll Number</p>
+                <input type="text" required name="" id="">
+            </div>
+            <div class="dob">
+                <p>Date of Birth</p>
+                <input type="date" required name="" id="">
+            </div>
             <button type="submit">Submit</button>
 
         </form>
@@ -115,4 +140,5 @@
         }
     </script>
 </body>
+
 </html>
