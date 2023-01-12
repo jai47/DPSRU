@@ -97,41 +97,55 @@
             <h2 style="color: white; margin:100px; text-align:center;"><i>DAF  REGISTRATION <br> FORM</i></h2>
         </div>
         <div class="img"></div>
-        <form action="" method="post">
+        <form  action="https://sheetdb.io/api/v1/cymnzn072ab3s" method="post" id="sheetdb-form">
             <div class="Name">
                 <div class="fName">
                     <p>First Name</p>
-                    <input type="text" required>
+                    <input id="Fname" type="text" name="F_NAME" required>
                 </div>
                 <div class="lName">
                     <p>Last Name</p>
-                    <input type="text" required>
+                    <input id="Lname" type="text" name="L_NAME" required>
                 </div>
             </div>
             <div class="mail">
                 <p>Email</p>
-                <input type="email" required name="" id="">
+                <input type="email" required name="EMAIL" id="mail">
             </div>
             <div class="mNo">
                 <p>Mobile Number</p>
-                <input type="tel" required name="" id="">
+                <input type="tel" required name="PHONE_NUMBER" id="mNo">
             </div>
             <div class="rNo">
                 <p>Roll Number</p>
-                <input type="text" required name="" id="">
+                <input type="text" required name="ROLL_NUMBER" id="rNo">
             </div>
             <div class="dob">
                 <p>Date of Birth</p>
-                <input type="date" required name="" id="">
+                <input type="date" required name="DATE_OF_BIRTH" id="dob">
             </div>
             <button type="submit">Submit</button>
 
         </form>
     </div>
 
+    <script>
+        var form = document.getElementById('sheetdb-form');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+          method : "POST",
+          body: new FormData(document.getElementById("sheetdb-form")),
+      }).then(
+          response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.open('../index.html', '_blank');
 
-
-
+      });
+    });
+    </script>
+      
 
     <script>
         let menu = document.getElementById('popup');
