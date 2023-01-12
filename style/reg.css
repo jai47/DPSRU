@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+body .nav{
+    justify-content: start;
+    background: rgb(37, 37, 37);
+    height: 10vh;
+}
+
+body .nav a{
+    margin-left: 1vh;
+    text-decoration: none;
+    color: white;
+}
+
+body .nav a img{
+    position: absolute;
+    top: 0;
+    height: 10vh;   
+}
+
+body .nav a .nav_logo{
+    margin-left: 7vh;
+    font-size: 2vh;
+    text-align: center;
+    width: 42vh;
+}
+
+body .nav a .nav_logo span{
+    font-weight: 600;
+    font-size: 1.2vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+body .form{
+    margin-top: 5vh;
+    background: rgb(255, 255, 255);
+    display: flex;
+    height: 70vh;
+    width: 70%;
+    border-radius: 1vh;
+    overflow: hidden;
+    box-shadow: 0 0 5vh rgb(133, 132, 132);
+}
+
+body .form .img{
+    width: 50%;
+    border-bottom-left-radius: 1vh;
+    border-top-left-radius: 1vh;
+    background-image: url(https://www.doublehelical.com/wp-content/uploads/2018/06/DSC9004-800x445.jpg);
+    background-size: 190%;
+    background-position-x: -10vh;
+    background-repeat: no-repeat;
+}
+.bgGradient{
+    position: absolute;
+    border-bottom-left-radius: 1vh;
+    border-top-left-radius: 1vh;
+    height: 70vh;
+    width: 35%;
+    background: linear-gradient(90deg,rgba(0,0,0,0.5) 80%,rgba(0,0,0,0.5) 90%,#272727 99%,#272727 100%);
+}
+
+body .form form{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
