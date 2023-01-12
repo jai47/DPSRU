@@ -276,7 +276,7 @@ section .mainSection p{
 /* slider */
 
 .slider{
-    min-height: 100vh;
+    height: auto;
     width: 100%;
     margin-bottom: 10vh;
     display: flex;
@@ -306,25 +306,25 @@ section .mainSection p{
 .card{
     position: relative;
     margin-top: 5vh;
-    margin-bottom: 5vh;
-    min-width: 250px;
-    height: 150px;
+    /* margin-bottom: 5vh; */
+    min-width: 18vw;
+    height: 22vh;
     border-radius: 20px;
     box-shadow: 0 35px 80px rgba(0,0,0,0.15);
     transition: 0.5s;
 }
 
 .card:hover{
-    height: 350px;
+    height: 30vw;
 }
 
 .imgBx{
     position: absolute;
     left: 50%;
-    top: -20px;
+    top: -2vh;
     transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
+    width: 8vw;
+    height: 8vw;
     background: white;
     border-radius: 20px;
     box-shadow: 0 15px 50px rgba(0,0,0,0.35);
@@ -333,8 +333,8 @@ section .mainSection p{
 }
 
 .card:hover .imgBx{
-    width: 150px;
-    height: 150px;    
+    width: 15vw;
+    height: 15vw;    
 }
 
 .imgBx img{
