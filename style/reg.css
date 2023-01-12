@@ -68,15 +68,27 @@ body .form form{
 }
 
 body .form form p{
+    position: relative;
+    left: 1vh;
+    top: 1.8vh;
     font-size: 2.5vh;
-    padding: 1vh 0 1vh ;
+    background: #fff;
+    padding: 0.5vh;
+    width: fit-content;
+    transition: 0.5s;
 }
+
+/* body .form form input:focus{
+    top: 1.8vh;
+    background: red;
+} */
 
 form :where(input, button){
     border: none;
     border-radius: 0.5vh;
     outline: none;
     width: 100%;
+    transition: 0.5s;
 }
 
 body .form form input{
@@ -86,6 +98,10 @@ body .form form input{
     padding: 0 0 0 1vh;
     width: 97%;
     border: 0.1vh solid rgb(32, 32, 32);
+}
+
+input:focus ~ p {
+    background: red;
 }
 
 form .Name{
