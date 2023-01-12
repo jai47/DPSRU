@@ -97,7 +97,7 @@
             <h2 style="color: white; margin:100px; text-align:center;"><i>DAF  REGISTRATION <br> FORM</i></h2>
         </div>
         <div class="img"></div>
-        <form  action="https://sheetdb.io/api/v1/cymnzn072ab3s" method="post" id="sheetdb-form">
+        <form autocomplete="off" action="https://sheetdb.io/api/v1/cymnzn072ab3s" method="post" id="sheetdb-form">
             <div class="Name">
                 <div class="fName">
                     <p>First Name</p>
@@ -140,7 +140,7 @@
           response => response.json()
       ).then((html) => {
         // you can put any JS code here
-        window.open('../index.html', '_blank');
+        window.open('../index.html');
 
       });
     });
