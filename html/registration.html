@@ -140,7 +140,9 @@
           response => response.json()
       ).then((html) => {
         // you can put any JS code here
+        alert("registered!")
         window.open('../index.html');
+        form.reset();
 
       });
     });
