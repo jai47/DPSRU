@@ -43,6 +43,7 @@ body .form{
     border-top: 0.4vh solid rgba(255, 255, 255, 0.5);
     border-left: 0.4vh solid rgba(255, 255, 255, 0.5);
     box-shadow: 5vh 5vh 10vh rgba(0, 0, 0, 0.5);
+    transform: perspective(1000px);
 }
 
 body .form .img{
