@@ -2,20 +2,25 @@ var form = document.getElementById('sheetdb-form');
 let courses = document.getElementById('crs');
 let submit = document.getElementById('subBtn');
 let CouDiv = document.getElementById('crsdiv');
-let inputP = document.createElement("p")
-let inputText = document.createElement("input")
+let crsLbl = document.createElement("label");
+let inputP = document.createElement("p");
+let inputText = document.createElement("input");
+
+crsLbl.setAttribute("for","more");
 inputText.setAttribute("type", "text", "name", "Courses");
 inputText.setAttribute("name", "Courses");
+inputText.setAttribute("id", "more");
 inputText.required = true;
-inputP.innerHTML = "Enter all values";
+inputP.innerHTML = "Enter courses <span style='color: red;'>*</span>";
+crsLbl.appendChild(inputP);
+crsLbl.appendChild(inputText);
+
 
 courses.addEventListener('change', function () {
   if (courses.value == 'multi') {
-    CouDiv.appendChild(inputP)
-    CouDiv.appendChild(inputText)
+    CouDiv.appendChild(crsLbl)
   } else {
-    CouDiv.removeChild(inputP)
-    CouDiv.removeChild(inputText)
+    CouDiv.removeChild(crsLbl)
   }
 })
 

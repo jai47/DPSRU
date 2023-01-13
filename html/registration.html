@@ -17,7 +17,7 @@
 <body>
 
     <div class="nav">
-        <a href="">
+        <a href="../index.html">
             <img src="../source/logo4.png" alt="logo">
             <div class="nav_logo">
                 <h3>D.P.S.R.U</h3>
@@ -56,19 +56,24 @@
                 <p>Date of Birth <span style="color: red;">*</span></p>
                 <input type="date" name="DOB" id="DOB" required>
             </label>
-            <label for="crsdiv">
-                <p>Choose the courses <span style="color: red;">*</span></p>
-                <div class="courses" id="crsdiv">
-                    <select name="Courses" id="crs" required>
-                        <option value= >select</option>
+            <div class="courses" id="crsdiv">
+                <label for="crs" id="crsLbl">
+                    <p>Choose the courses <span style="color: red;">*</span></p>
+
+                    <select name="Courses" id="crs" required="">
+                        <option value="">select</option>
                         <option value="multi">More than one courses</option>
                         <option value="Dpharm">D Pharma</option>
                         <option value="Bpharm">B Pharma</option>
                         <option value="Mpharm">M Pharma</option>
                         <option value="PHD">PHD</option>
                     </select>
-                </div>
-            </label>
+                </label>
+                <!-- <label for="more">
+                    <p>Enter courses <span style='color: red;'>*</span></p>
+                    <input type="text" name="Courses" id="more" required="">
+                </label> -->
+            </div>
             <label for="attending">
                 <p>Year of Attending <span style="color: red;">*</span></p>
                 <input type="date" name="Attending" id="attending" required>
@@ -99,6 +104,13 @@
     </div>
 
     <script src="../script/registration.js"></script>
+    <script type="text/javascript" src="../script/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".form"), {
+            max: 10,
+            speed: 400
+        });
+    </script>
 
 </body>
 

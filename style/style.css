@@ -456,6 +456,11 @@ footer .footer .f ul li{
     padding: 2vh;
     list-style: none;
     border-bottom: 0.2vh solid grey;
+}
+
+footer .footer .f ul li a{
+    text-decoration: none;
+    color: #fff;
     font-family: 'Ubuntu', sans-serif;
 }
 
