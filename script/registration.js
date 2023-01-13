@@ -25,12 +25,11 @@ form.addEventListener("submit", function (e) {
     method: "POST",
     body: new FormData(document.getElementById("sheetdb-form")),
   }).then(
-    response => response.json()
+    response => response.json(),
+    form.reset()
   ).then((html) => {
     alert("registered!")
     window.open('../index.html',"_self");
-    form.reset();
-
   });
 
 });
