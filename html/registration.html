@@ -29,50 +29,77 @@
 
     <div class="form">
         <div class="bgGradient">
-            <h2 style="color: white; margin:100px; text-align:center;"><i>DAF  REGISTRATION <br> FORM</i></h2>
+            <h2 style="color: white; margin:100px; text-align:center;"><i>DAF REGISTRATION <br> FORM</i></h2>
         </div>
         <div class="img"></div>
         <form autocomplete="off" action="https://sheetdb.io/api/v1/cymnzn072ab3s" method="post" id="sheetdb-form">
-            <div class="Name">
-                <div class="fName">
-                    <p class="inputTxt">First Name</p>
-                    <input id="Fname" type="text" name="F_NAME" required>
-                </div>
-                <div class="lName">
+            <div class="title">
+                <label for="title">
+                    <p>Title <span style="color: red;">*</span></p>
+                    <select name="title" id="title" required>
+                        <option value="">Select</option>
+                        <option value="Mr">Mr.</option>
+                        <option value="Mrs">Mrs.</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </label>
+                <label for="fname">
+                    <p>First Name <span style="color: red;">*</span></p>
+                    <input type="text" name="F_NAME" id="fname" required>
+                </label>
+                <label for="lname">
                     <p>Last Name</p>
-                    <input id="Lname" type="text" name="L_NAME" required>
+                    <input type="text" name="L_NAME" id="lname">
+                </label>
+            </div>
+            <label for="DOB">
+                <p>Date of Birth <span style="color: red;">*</span></p>
+                <input type="date" name="DOB" id="DOB" required>
+            </label>
+            <label for="crsdiv">
+                <p>Choose the courses <span style="color: red;">*</span></p>
+                <div class="courses" id="crsdiv">
+                    <select name="Courses" id="crs" required>
+                        <option value= >select</option>
+                        <option value="multi">More than one courses</option>
+                        <option value="Dpharm">D Pharma</option>
+                        <option value="Bpharm">B Pharma</option>
+                        <option value="Mpharm">M Pharma</option>
+                        <option value="PHD">PHD</option>
+                    </select>
                 </div>
+            </label>
+            <label for="attending">
+                <p>Year of Attending <span style="color: red;">*</span></p>
+                <input type="date" name="Attending" id="attending" required>
+            </label>
+            <div class="profession">
+                <label for="designation">
+                    <p>Present Designation <span style="color: red;">*</span></p>
+                    <input type="text" name="Designation" id="designation" required>
+                </label>
+                <label for="company">
+                    <p>Company <span style="color: red;">*</span></p>
+                    <input type="text" name="Company" id="company" required>
+                </label>
             </div>
-            <div class="mail">
-                <p>Email</p>
-                <input type="email" required name="EMAIL" id="mail">
+            <label for="tel">
+                <p>Mobile Number <span style="color: red;">*</span></p>
+                <input type="tel" name="Mobile" id="tel" placeholder="XXXXX XXXXX" required>
+            </label>
+            <label for="mail">
+                <p>Email <span style="color: red;">*</span></p>
+                <input type="email" name="Email" id="mail" placeholder="example@example.com" required>
+            </label>
+            <div class="btns">
+                <button type="reset">RESET</button>
+                <button type="submit" id="subBtn">SUBMIT</button>
             </div>
-            <div class="mNo">
-                <p>Mobile Number</p>
-                <input type="tel" required name="PHONE_NUMBER" id="mNo">
-            </div>
-            <div class="rNo">
-                <p>Roll Number</p>
-                <input type="text" required name="ROLL_NUMBER" id="rNo">
-            </div>
-            <div class="dob">
-                <p>Date of Birth</p>
-                <input type="date" required name="DATE_OF_BIRTH" id="dob">
-            </div>
-            <button type="submit">Submit</button>
-
         </form>
     </div>
 
     <script src="../script/registration.js"></script>
-      
 
-    <script>
-        let menu = document.getElementById('popup');
-        function showOptions() {
-            menu.classList.toggle('moreOptionsActive');
-        }
-    </script>
 </body>
 
 </html>

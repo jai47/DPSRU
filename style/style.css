@@ -458,3 +458,16 @@ footer .footer .f ul li{
     border-bottom: 0.2vh solid grey;
     font-family: 'Ubuntu', sans-serif;
 }
+
+@media only screen and (max-width: 600px)  {
+
+    .banner{
+        display: none;
+    }
+
+    .nav{
+        width: 10vw;
+        background: red;
+    }
+
+}
