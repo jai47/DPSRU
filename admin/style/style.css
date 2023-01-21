@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+     display: flex;
+    flex-direction: column;
+    align-items: center; 
+    /* background: linear-gradient(153deg, white,rgb(209, 209, 209)); */
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.moreOptions{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 90vh;
+    width: 90vw;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 10vh grey;
+    border-radius: 1vh;
+    z-index: 150;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.moreOptions i{
+    background-color: red;
+    padding: 1.5vh;
+    display: block;
+    width: 2.5vh;
+    float: right;
+    color: white;
+    font-size: 2.5vh;
+    border-top-right-radius: 1vh;
+}
+
+.moreOptions i:hover{
+    background-color: rgb(190, 0, 0);
+    cursor: pointer;
+}
+
+.scrolling{
+    width: 100%;
+    height: 85%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vh;
+    justify-content: space-evenly;
+    overflow-y: auto;
+}
+
+.scrolling img{
+    min-width: 20vh;
+    min-height: 20vh;
+    height: 39vh;
+    width: 39vh;
+}
+
+body .nav{
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 15vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+body .nav img{
+    height: 15vh;
+}
+
+body .nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body .nav li{
+    padding: 5vh;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-size: 3.5vh;
+    font-weight: 900;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body .nav li::after{
+    content: '';
+    display: block;
+    width: 0%;
+    height: 0.2vh;
+    background: red;
+    transition: 0.5s;
+}
+
+body .nav li:hover::after{
+    width: 100%;
+}
+
+#folder{
+    height: 75%;
+    width: 85%;
+    margin: 5vh;
+    overflow-y: scroll;
+}
+
+.row{
+    display: flex;
+    height: 25%;
+    align-items: center;
+    padding-left: 2vh;
+}
+.row .imgBx{
+    height: 100%;
+    width: 10%;
+    border-right: 0.2vh solid black;
+    border-bottom: 0.2vh solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row .imgBx img{
+    height: 95%;
+}
+
+.row .name {
+    height: 100%;
+    width: 7%;
+    border-right: 0.2vh solid black;
+    border-bottom: 0.2vh solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row .dob {
+    height: 100%;
+    width: 9%;
+    border-right: 0.2vh solid black;
+    border-bottom: 0.2vh solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row .academics {
+    height: 100%;
+    width: 40%;
+    border-right: 0.2vh solid black;
+    border-bottom: 0.2vh solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row .academics p{
+    text-align: center;
+    width: 100%;
+    border-bottom: 0.2vh solid black;
+}
+
+.row .academics .about{
+    overflow-y: scroll;
+}
+
+.row .attending {
+    height: 100%;
+    width: 6%;
+    border-right: 0.2vh solid black;
+    border-bottom: 0.2vh solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row .contacts {
+    height: 100%;
+    width: 17%;
+    border-right: 0.2vh solid black;
+    border-bottom: 0.2vh solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
+.row .contacts p{
+    text-align: center;
+    width: 100%;
+    border-bottom: 0.2vh solid black;
+}
+
+.buttons{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bxs-user-check{
+    color: green;
+    margin: auto;
+    font-size: 6vh;
+}
+
+.bxs-user-x{
+    color: red;
+    margin: auto;
+    font-size: 6vh;
+}
+
+.grey{
+    background-color: rgb(218, 218, 218);
+}
+
+.white{
+    background-color: white;
+}

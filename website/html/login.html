@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon"
+        href="https://upload.wikimedia.org/wikipedia/en/0/04/Delhi_Pharmaceutical_Science_and_Research_University_logo.png"
+        type="image/x-icon">
+    <title>DAF | Registration</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/reg.css">
+    <link rel="stylesheet" href="../style/log.css">
+</head>
+
+<body>
+
+    <div class="nav">
+        <a href="../index.html">
+            <img src="../source/logo4.png" alt="logo">
+            <div class="nav_logo">
+                <h3>D.P.S.R.U</h3>
+                <span>DELHI PHARMACEUTICAL SCIENCE & RESEARCH UNIVERSITY</span>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="form">
+        <form autocomplete="off" name="logForm" action="/auth" method="post">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" alt="">
+            <span class="form-divider">Sign in</span>
+                    <label for="tel">
+                        <p>Email <span style="color: red">*</span></p>
+                        <input type="text" name="email" id="tel" placeholder="example@example.com" required>
+                    </label>
+                    <label for="passwd">
+                        <p>Password <span style="color: red">*</span></p>
+                        <i class='bx bx-hide' id="eye1" onclick="showPass('eye1','passwd')"></i>
+                        <input type="password" name="password" id="passwd" required>
+                    </label>
+                    <span>Don't have an account? <a href="registration.html">Create one</a></span>
+            <div class="btns">
+                <button type="submit" id="subBtn">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../script/registration.js"></script>
+    <script type="text/javascript" src="../script/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".form"), {
+            max: 5,
+            speed: 400
+        });
+    </script>
+
+</body>
+
+</html>

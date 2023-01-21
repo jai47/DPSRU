@@ -39,7 +39,8 @@ body .form{
     width: 70%;
     border-radius: 1vh;
     overflow: hidden;
-    background: rgba(145, 145, 145, 0.1);
+    /* background: rgba(0, 0, 0, 0.1); */
+    background-color: white;
     border-top: 0.4vh solid rgba(255, 255, 255, 0.5);
     border-left: 0.4vh solid rgba(255, 255, 255, 0.5);
     box-shadow: 5vh 5vh 10vh rgba(0, 0, 0, 0.5);
@@ -65,76 +66,163 @@ body .form .img{
     background: linear-gradient(90deg,rgba(0,0,0,0.5) 80%,rgba(0,0,0,0.5) 90%,#272727 99%,#272727 100%);
 }
 
-body .form form{
-    margin: auto;
-    width: 60vh;
-    padding: 1vh;
-    height: auto;
-    font-family: 'Ubuntu', sans-serif;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.5vh;
-    align-items: center;
+.bgGradient h2{
+    position: relative;
+    color: white;
+    font-size: clamp(1rem, 3vw);
+    margin: 50px;
+    width: fit-content;
+    letter-spacing: 0.4vh;
+    font-family: 'Source Code Pro', monospace;
 }
 
-body .form form .title{
+.bgGradient p{
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: clamp(1rem, 3vw);
+    margin: 50px;
+    width: fit-content;
+    letter-spacing: 0.4vh;
+    font-family: 'Source Code Pro', monospace;    
+}
+
+.bgGradient h2::before,
+.bgGradient h2::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.bgGradient h2::before{
+    background: rgb(0, 0, 0);
+    animation: writer 4s steps(21) 1s forwards;
+}
+
+@keyframes writer{
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink{
+    to {
+        background: transparent;
+    }
+}
+
+
+.bgGradient h2::after{
+    width: 0.125em;
+    background: white;
+    animation: writer 4s steps(21) 1s forwards,
+    blink 500ms steps(24) infinite;
+}
+
+body .form form{
+    margin: auto;
+    height: auto;
+    width: 60vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2vh;
+    align-items: center;
+    font-size: 2.3vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+form :where(input, select, button){
+    height: 4vh;
+    width: 58vh;
+    border: none;
+    padding-left: 2vh;
+    outline: 0.1vh solid rgb(206, 206, 206);
+    border-radius: 0.5vh;
+}
+
+body .form form .form-divider{
+    color: #444;
+    padding: 1vh;
+    margin-top: 1vh;
+    width: 96%;
+    text-align: center;
+    border-bottom: 0.1vh solid rgb(206, 206, 206);
+}
+
+body .form form .flex{
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
 
-body .form form .title select{
+body .form form .flex select{
     width: 13vh;
 }
 
-body .form form .title input{
+body .form form .flex input{
     width: 20vh;
 }
-
-form :where(input, select, button){
-    height: 5vh;
-    width: 58vh;
-    border: none;
-    outline: none;
-    border-radius: 0.5vh;
-}
-
 form p{
-    font-size: 2.4vh;
+    font-size: 2vh;
     padding: 0 0.5vh 0 0.5vh;
     background: white;
     margin-left: 2vh;    
     position: relative;
-    top: 1.2vh;
+    top: 1.1vh;
     width: fit-content;
 }
 
-form input, select{
-    border: 0.1vh solid #999;
-    padding: 0 1vh;
+#file{
+    visibility: hidden;
 }
 
+.file-custom{
+    position: relative;
+}
 
-body .form form #crsdiv{
+.file-custom::before{
+    position: absolute;
+    top: 0;
+    content: "Choose an Image";
+    display: block;
+    height: 3vh;
+    padding: 0.8vh 0.5vh 0 1vh;
+    outline: 0.1vh solid rgb(206, 206, 206);
+    border-radius: 0.5vh 0 0 0.5vh;
+}
+
+.file-custom::after{
+    content: 'Browse';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -6vh;
+    cursor: pointer;
+    background: rgb(224, 237, 255);
+    height: 3vh;
+    padding: 0.8vh 0.5vh 0 0.5vh;
+    outline: 0.1vh solid rgb(206, 206, 206);
+    border-radius: 0 0.5vh 0.5vh 0;
+}
+
+.file-custom:hover::after{
+    background: rgb(116, 174, 255);
+}
+body .form form .crsdivclass{
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
 
-body .form form #crsdiv input,select{
-    width: 28vh;
+body .form form .crsdivclass input{
+    width: 27.5vh;
 }
 
-body .form form .profession{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+body .form form .crsdivclass select{
+    width: 29.5vh;
 }
-
-body .form form .profession input{
-    width: 27vh;
-}
-
 
 form .btns{
     margin-top: 1vh;
@@ -186,4 +274,11 @@ form button:hover::before{
     width: 120%;
     top: 0;
     left: -10%;
+}
+
+.bx{
+    position: absolute;
+    right: 5vh;
+    padding-top: 0.5vh;
+    font-size: 3vh;
 }

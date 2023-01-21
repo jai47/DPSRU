@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon"
+        href="https://upload.wikimedia.org/wikipedia/en/0/04/Delhi_Pharmaceutical_Science_and_Research_University_logo.png"
+        type="image/x-icon">
+    <title>DAF | Registration</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/reg.css">
+</head>
+
+<body>
+
+    <div class="nav">
+        <a href="../index.html">
+            <img src="../source/logo4.png" alt="logo">
+            <div class="nav_logo">
+                <h3>D.P.S.R.U</h3>
+                <span>DELHI PHARMACEUTICAL SCIENCE & RESEARCH UNIVERSITY</span>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="form">
+        <div class="bgGradient">
+            <h2>DAF REGISTRATION FORM</h2>
+            <p>Register with Delhi Phamaceutical Science and Reasearch University (D.P.S.R.U.) Alumni Forum </p>
+        </div>
+        <div class="img"></div>
+        <form autocomplete="off" name="regForm" action="/register" method="post" onsubmit="return validate()" enctype="multipart/form-data">
+            <span class="form-divider">Basic details</span>
+            <div class="flex">
+                <label for="title">
+                    <p>Title <span style="color: red">*</span></p>
+                    <select name="title" id="title" required>
+                        <option value="">--</option>
+                        <option value="Dr">Dr.</option>
+                        <option value="Mr">Mr.</option>
+                        <option value="Mrs">Mrs.</option>
+                    </select>
+                </label>
+                <label for="fname">
+                    <p>First Name <span style="color: red">*</span></p>
+                    <input type="text" name="F_NAME" id="fname" placeholder="John" required>
+                </label>
+                <label for="lname">
+                    <p>Last Name</p>
+                    <input type="text" name="L_NAME" placeholder="Doe" id="lname">
+                </label>
+            </div>
+            <div class="flex">
+                <label class="file">
+                    <p style="z-index: 6">Profile Photo <span style="color: red">*</span></p>
+                    <input type="file" id="file" name="uploaded_file" aria-label="File browser example">
+                    <span class="file-custom"></span>
+                  </label>
+                <label for="DOB">
+                    <p>Date of Birth <span style="color: red">*</span></p>
+                    <input type="date" name="DOB" id="DOB" required>
+                </label>
+            </div>
+            <span class="form-divider">Academic details</span>
+            <div class="courses flex crsdivclass" id="crsdiv">
+                <label for="crs" id="crsLbl">
+                    <p>Choose the courses <span style="color: red">*</span></p>
+
+                    <select name="Courses" id="crs" required="">
+                        <option value="">select</option>
+                        <option value="multi">More than one courses</option>
+                        <option value="Dpharm">D Pharma</option>
+                        <option value="Bpharm">B Pharma</option>
+                        <option value="Mpharm">M Pharma</option>
+                        <option value="PHD">PHD</option>
+                    </select>
+                </label>
+            </div>            
+            <div class="flex crsdivclass">
+                <label for="designation">
+                    <p>Present Designation <span style="color: red">*</span></p>
+                    <input type="text" name="Designation" id="designation" required>
+                </label>
+                <label for="company">
+                    <p>Company <span style="color: red">*</span></p>
+                    <input type="text" name="Company" id="company" required>
+                </label>
+            </div>
+            <div class="flex crsdivclass">
+                <label for="attending">
+                    <p>Year of Attending <span style="color: red">*</span></p>
+                    <select name="Attending" id="attending" required>
+                        <option value=>--select--</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                        <option value="1999">1999</option>
+                        <option value="1998">1998</option>
+                        <option value="1997">1997</option>
+                        <option value="1996">1996</option>
+                        <option value="1995">1995</option>
+                        <option value="1994">1994</option>
+                        <option value="1993">1993</option>
+                        <option value="1992">1992</option>
+                        <option value="1991">1991</option>
+                        <option value="1990">1990</option>
+                        <option value="1988">1988</option>
+                        <option value="1987">1987</option>
+                        <option value="1986">1986</option>
+                        <option value="1985">1985</option>
+                        <option value="1985">1984</option>
+                        <option value="1985">1983</option>
+                        <option value="1985">1982</option>
+                        <option value="1985">1981</option>
+                    </select>
+                </label>
+                <label for="selfCompliment">
+                    <p>Describe Yourself<span style="color: red">*</span></p>
+                    <input type="text" name="about" id="selfCompliment" required>
+                </label>
+            </div>
+            
+            <span class="form-divider">Sign in details</span>
+            <div class="flex crsdivclass">
+                <div>
+                    <label for="tel">
+                        <p>Mobile Number <span style="color: red">*</span></p>
+                        <input type="tel" name="Mobile" id="tel" placeholder="XXXXX XXXXX" required>
+                    </label>
+                    <label for="mail">
+                        <p>Email <span style="color: red">*</span></p>
+                        <input type="email" name="Email" id="mail" placeholder="example@example.com" required>
+                    </label>
+                </div>
+                <div>
+                    <label for="passwd">
+                        <p>Password <span style="color: red">*</span></p>
+                        <i class='bx bx-hide' id="eye1" onclick="showPass('eye1','passwd')"></i>
+                        <input type="password" name="password" id="passwd" required>
+                    </label>
+                    <label for="cnfpasswd">
+                        <p>Confirm Password <span style="color: red">*</span></p>
+                        <!-- <i class='bx bx-show'></i> -->
+                        <i class='bx bx-hide' id="eye2" onclick="showPass('eye2','cnfpasswd')" ></i>
+                        <input type="password" id="cnfpasswd" required>
+                    </label>
+                </div>
+            </div>
+            <div class="btns">
+                <button type="reset">RESET</button>
+                <button type="submit" id="subBtn">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../script/registration.js"></script>
+    <script type="text/javascript" src="../script/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".form"), {
+            max: 5,
+            speed: 400
+        });
+    </script>
+
+</body>
+
+</html>
