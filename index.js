@@ -104,7 +104,7 @@ app.get('/approve', async function(req, res) {
     // console.log(req.query.variable);
     const aprvUser = await aprv.findOne({ "_id": `${req.query.variable}` });
     const MongoClient = require('mongodb').MongoClient;
-    const uri = "mongodb+srv://jaimishra2004:7october2004@cluster0.cmv7njg.mongodb.net/test?retryWrites=true&w=majority";
+    const uri = "mongodb+srv://<username>:<password>@cluster0.cmv7njg.mongodb.net/test?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true });
     client.connect(err => {
         const targetCollection = client.db("test").collection("datas");
