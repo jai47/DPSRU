@@ -223,12 +223,14 @@ body .nav li:hover::after{
     color: green;
     margin: auto;
     font-size: 6vh;
+    cursor: pointer;
 }
 
 .bxs-user-x{
     color: red;
     margin: auto;
     font-size: 6vh;
+    cursor: pointer;
 }
 
 .grey{

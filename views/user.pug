@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title My Profile
+        style
+            include ../website/style/user.css
+    body 
+        div#navbar
+            <div class = 'imgbx'>
+                a(href='/')
+                    img(src="/source/logo4.png", alt="DPSRU")
+            </div>
+            ul 
+                li #[a(href='/profile') HOME]
+                li #[a(href='/') BACK TO ALUMNI PAGE]
+                li #[a(href='/contact') CONTACT US]
+                li #[a(href='/feedback') FEEDBACK]
+                li #[a(href='/logout') logout]
+        main 
+            div.userImg
+                h2= 'Welcome Back '+name
+                div.img
+                    img(src='/uploads/'+img, alt=name, srcset="")
+                div.question
+                    span= 'Discription'
+                div.answer
+                    span= about
+            div.content
+                div.row
+                    div.question
+                        span= 'User Name'
+                    div.answer
+                        span= name
+                div.row
+                    div.question
+                        span= 'Date of Birth'
+                    div.answer
+                        span= dob
+                div.row
+                    div.question
+                        span= 'Course'
+                    div.answer
+                        span= course
+                div.row
+                    div.question
+                        span= 'Desigination'
+                    div.answer
+                        span= desigination
+                div.row
+                    div.question
+                        span= 'Company'
+                    div.answer
+                        span= company
+                div.row
+                    div.question
+                        span= 'Attending Year'
+                    div.answer
+                        span= attend
+                div.row
+                    div.question
+                        span= 'Mobile Number'
+                    div.answer
+                        span= mobile
+                div.row
+                    div.question
+                        span= 'Registered Email'
+                    div.answer
+                        span= email

@@ -61,6 +61,9 @@ for (let i of people.data){
     img.setAttribute("alt",`${i.F_NAME}`);
     let contentDiv = document.createElement("div");
     contentDiv.classList.add("content");
+    if (i.paid){
+        contentDiv.classList.add("paid");
+    }
     let detailDiv = document.createElement("div");
     detailDiv.classList.add("details");
     let h2 = document.createElement("h2");

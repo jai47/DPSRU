@@ -1,25 +1,40 @@
-/* body{
-    background-image: url('https://img.freepik.com/free-vector/hand-drawn-minimal-background_23-2149000728.jpg?w=2000');
-    background-image: url('https://wallpapers.com/images/file/dark-minimalist-diamond-shapes-3ov0wmyfdekhi55z.jpg');
-    background-size: cover;
-} */
+body{
+    background: linear-gradient(135deg,rgb(226, 255, 243),rgb(189, 255, 235));
+}
 
 body .form{
-    background: rgba(255, 255, 255, 0.24);
-    width: 34%;
+    display: flex;
+    background: rgb(255, 255, 255);
+    width: 70%;
+}
+
+body .form .imgbx{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body .form .imgbx img{
+    width: 70vh;
 }
 
 body .form form{
     height: 100%;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2vh;
 }
 
+form img{
+    width: 17vh;
+}
+
 form :where(input, select, button){
     height: 6vh;
-    width: 58vh;
+    width: 39vh;
     border: none;
     padding-left: 2vh;
     outline: 0.1vh solid rgb(206, 206, 206);
@@ -27,9 +42,15 @@ form :where(input, select, button){
 }
 
 form button{
-    width: 100%;
+    width: 42vh;
+    border: 0.2vh solid #6C63FF;
+}
+
+form button::before{
+    background: #6C63FF;
 }
 
 .bx{
-    padding-top: 1.5vh
+    padding-top: 1.5vh;
+    padding-right: 10vh;
 }

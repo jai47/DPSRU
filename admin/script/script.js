@@ -12,9 +12,9 @@ let requests = {
 let n = 1;
 let j = '';
 for (let i of requests.data) {
-    if(n%2==0){
+    if (n % 2 == 0) {
         j = 'white';
-    }else{
+    } else {
         j = 'grey';
     }
     n++;
@@ -29,18 +29,18 @@ for (let i of requests.data) {
     let dobspan = document.createElement('span');
     let academic = document.createElement('div');
     let course = document.createElement('p');
-    let  designation= document.createElement('p');
-    let  company= document.createElement('p');
+    let designation = document.createElement('p');
+    let company = document.createElement('p');
     let detail = document.createElement('p');
     let attending = document.createElement('div');
     let attend = document.createElement('span');
     let contact = document.createElement('div');
-    let  email= document.createElement('p');
+    let email = document.createElement('p');
     let phone = document.createElement('p');
-    let button  = document.createElement('div');
+    let button = document.createElement('div');
     let check = document.createElement('i');
     let x = document.createElement('i');
-    row.classList.add('row',j);
+    row.classList.add('row', j);
     imgBx.classList.add('imgBx');
     name.classList.add('name');
     dob.classList.add('dob');
@@ -49,9 +49,11 @@ for (let i of requests.data) {
     contact.classList.add('contacts');
     attending.classList.add('attending');
     button.classList.add('buttons');
-    check.classList.add('bx','bxs-user-check');
-    x.classList.add('bx','bxs-user-x');
-    img.setAttribute('src',`/uploads//${i.Avtar}`);
+    check.classList.add('bx', 'bxs-user-check');
+    check.setAttribute("onclick", `approve('${i._id}')`)
+    x.classList.add('bx', 'bxs-user-x');
+    x.setAttribute("onclick", `reject('${i._id}')`)
+    img.setAttribute('src', `/uploads//${i.Avtar}`);
     title.innerText = `${i.title}`;
     fname.innerText = `${i.F_NAME}`;
     lname.innerText = `${i.L_NAME}`;
@@ -87,33 +89,35 @@ for (let i of requests.data) {
     document.getElementById('folder').appendChild(row);
 }
 
-/* <div class="row grey">
-        <div class="imgBx">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" alt="">
-        </div>
-        <div class="name">
-            <span class="title">Mr.</span>
-            <span class="fname">Jai</span>
-            <span class="Lname">Mishra</span>
-        </div>
-        <div class="dob">
-            <span>07-10-2004</span>
-        </div>
-        <div class="academics">
-            <p class="course">Btech CSE</p>
-            <P class="designation">Student</P>
-            <P class="company">College</P>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit vitae commodi quo esse earum, dolore culpa, hic repellat dolores laboriosam blanditiis officia facere amet dolorem veniam. Consequatur et omnis nulla.</p>
-        </div>
-        <div class="attending">
-            <span class="attend">2023</span>
-        </div>
-        <div class="contacts">
-            <p class="email">official@gmail.com</p>
-            <p class="phone">9658741230</p>
-        </div>
-        <div class="buttons">
-            <i class='bx bxs-user-check'></i>
-            <i class='bx bxs-user-x' ></i>
-        </div>
-</div> */
+function approve(e) {
+    if (e !== undefined) {
+        fetch(`/approve?variable=${e}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+        location.reload();
+    } else {
+        console.log("Variable does not exist");
+    }
+    
+}
+
+function reject(e) {
+    if (e !== undefined) {
+        fetch(`/reject?variable=${e}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+        location.reload();
+    } else {
+        console.log("Variable does not exist");
+    }
+}
