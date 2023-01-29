@@ -99,7 +99,9 @@ function approve(e) {
         .catch(error => {
             console.error(error);
         });
-        location.reload();
+        setTimeout(
+            location.reload(),5000
+        )
     } else {
         console.log("Variable does not exist");
     }
@@ -116,7 +118,9 @@ function reject(e) {
         .catch(error => {
             console.error(error);
         });
-        location.reload();
+        setTimeout(
+            location.reload(),5000
+        )
     } else {
         console.log("Variable does not exist");
     }

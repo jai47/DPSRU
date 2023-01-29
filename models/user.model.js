@@ -13,7 +13,8 @@ const collection1 = new mongoose.Schema({
     about: String,
     Mobile: String,
     Email: String,
-    password: String
+    password: String,
+    admin: String
 });
 
 const doc = mongoose.model('data', collection1);

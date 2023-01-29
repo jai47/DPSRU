@@ -23,8 +23,26 @@ courses.addEventListener('change', function () {
   }
 })
 
+function validateImg(){
+  let img = document.forms['regForm']['uploaded_file'];
+  let filename = document.forms['regForm']['uploaded_file'].value;
+  let ext = filename.substr(filename.lastIndexOf(".")+1, filename.length).toLowerCase();
+  if((ext == 'jpg') || (ext == 'png') || (ext == 'jpeg')){
+    console.log(img.files[0].size/1024);
+    if(img.files[0].size > 100 * 1024){ //checking size of the image
+      alert("too large file")
+      img.value = "";
+    }
+  }else{
+    alert('select a image file only')
+    img.value = "";
+  }
+
+}
+
 function validate(){
   var validation = true;
+
   let num = document.forms['regForm']['Mobile'].value;
   let digit = Number(num);
   let password = document.getElementById('passwd').value;

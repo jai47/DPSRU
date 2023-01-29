@@ -57,7 +57,7 @@
             <div class="flex">
                 <label class="file">
                     <p style="z-index: 6">Profile Photo <span style="color: red">*</span></p>
-                    <input type="file" id="file" name="uploaded_file" aria-label="File browser example" required>
+                    <input type="file" accept="image/*" id="file" name="uploaded_file" onchange="validateImg()" required>
                     <span class="file-custom"></span>
                   </label>
                 <label for="DOB">
@@ -141,7 +141,7 @@
                 </label>
                 <label for="selfCompliment">
                     <p>Describe Yourself<span style="color: red">*</span></p>
-                    <input type="text" name="about" id="selfCompliment" required>
+                    <input type="text" name="about" placeholder="Describe yourself in 50 words" id="selfCompliment" required>
                 </label>
             </div>
             
@@ -160,7 +160,7 @@
                 <div>
                     <label for="passwd">
                         <p>Password <span style="color: red">*</span></p>
-                        <i class='bx bx-hide' id="eye1" onclick="showPass('eye1','passwd')"></i>
+                        <!-- <i class='bx bx-hide' id="eye1" onclick="showPass('eye1','passwd')"></i> -->
                         <input type="password" name="password" id="passwd" required>
                     </label>
                     <label for="cnfpasswd">
@@ -182,7 +182,7 @@
     <script type="text/javascript" src="../script/vanilla-tilt.js"></script>
     <script type="text/javascript">
         VanillaTilt.init(document.querySelector(".form"), {
-            max: 5,
+            max: 2,
             speed: 400
         });
     </script>

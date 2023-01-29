@@ -5,11 +5,14 @@
     padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
      display: flex;
     flex-direction: column;
     align-items: center; 
-    /* background: linear-gradient(153deg, white,rgb(209, 209, 209)); */
     position: relative;
     top: 0;
     left: 0;
@@ -30,7 +33,7 @@ body{
     z-index: 150;
     visibility: hidden;
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.2s ease-in-out;
 }
 
 .moreOptions i{
@@ -66,6 +69,7 @@ body{
     min-height: 20vh;
     height: 39vh;
     width: 39vh;
+    cursor: pointer;
 }
 
 .moreOptionsActive{
@@ -73,6 +77,7 @@ body{
     top: 50%;
     visibility: visible;
     overflow: hidden;
+    transition: 0.5s ease-in-out;
 }
 
 body .banner{
@@ -166,7 +171,7 @@ body .nav li a{
 .main{
     height: 50vh;    
     width: 100vw;
-    background: url(https://www.doublehelical.com/wp-content/uploads/2018/06/DSC9004-800x445.jpg);
+    background: url('https://www.doublehelical.com/wp-content/uploads/2018/06/DSC9004-800x445.jpg');
     background-position-x: center;
     background-size: 75%;
     background-repeat: no-repeat;
@@ -197,13 +202,13 @@ body .nav li a{
 
 .btn{
     height: 6vh;
-    width: 10vw;
+    width: 12vw;
     font-size: 1vw;
     background: rgb(253, 32, 32);
     border: none;
     outline: none;
     cursor: pointer;
-    border-radius: 1.5vh;
+    border-radius: 0.6vh;
 }
 
 .btn a{
@@ -213,7 +218,7 @@ body .nav li a{
 
 
 .btn:hover{
-    background: rgb(250, 63, 63);
+    background: rgb(202, 1, 1);
 }
 
 .mainBtn{
@@ -228,22 +233,18 @@ body .nav li a{
 
 section{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10vh;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 15vh;
     margin-bottom: 10vh;
 }
 
 section .overview {
-    position: absolute;
-    top: 85vh;
-    left: 5vh;
     height: 50vh;
     width: 15vw;
     border-radius: 0.8vh;
     box-shadow: 0 0 5vh rgb(177, 177, 177);
     padding: 2vh;
-    /* margin-right: 10vh; */
 }
 
 section .overview span{
@@ -275,7 +276,6 @@ section .overview ul li{
 }
 
 section .mainSection{
-    margin-top: 10vh;
     width: 60vw;
     display: flex;
     flex-direction: column;
@@ -287,12 +287,32 @@ section .mainSection{
 }
 
 .iframe-container{
-    position: relative;
-    width: 100%;
-    padding-bottom: 52.25%; 
-    height: 0;
-    margin-bottom: 10vh;
+    height: 80vh;
+    background: url("../source/images/0.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 5vh;
+    animation: slider 15s infinite ;
+    animation-delay: 5s;
   }
+
+@keyframes slider{
+    0%{
+        background: url("../source/images/0.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    35%{
+        background: url("../source/images/1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    75%{
+        background: url("../source/images/2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
 
 .iframe-container iframe{
    position: absolute;
@@ -314,12 +334,38 @@ section .mainSection p{
     min-width: 18vw;
     border-radius: 3vh;
     height: 22vh;
+    cursor: pointer;
     box-shadow: 0 35px 80px rgba(0,0,0,0.15);
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
 }
 
 .card:hover{
     height: 30vw;
+    transform: translateY(-1vh);
+    animation: float 5s infinite linear;
+}
+
+@keyframes float {
+    0%{
+        transform: translateY(-1vh);
+    }
+    25%{
+        transform: translateY(0vh);
+    }
+    50%{
+        transform: translateY(-1vh);
+    }
+    75%{
+        transform: translateY(0vh);
+    }
+    100%{
+        transform: translateY(-1vh);
+    }
+}
+
+.card:active{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(0);
 }
 
 .imgBx{
@@ -359,13 +405,16 @@ section .mainSection p{
     justify-content: center;
     align-items: center;
     z-index: -1;
+    background: linear-gradient(145deg, #ececec, #ffffff);
+    box-shadow:  20px 20px 60px #bebebe,
+                 -20px -20px 60px #ffffff;
     overflow: hidden;
 }
 .card .content .details{
     text-align: center;
     width: 100%;
     transform: translateY(11vh);
-    transition: 0.5s;
+    transition: 0.5s all ease-in-out;
 }
 
 .card:hover .content .details{
@@ -398,7 +447,7 @@ section .mainSection p{
 }
 
 .paid{
-    background: linear-gradient(135deg,white,rgb(245 203 86));
+    background: linear-gradient(145deg, #ffffff ,rgb(245 203 86));
 }
 
 main{
@@ -482,15 +531,120 @@ footer .footer .f ul li a{
     font-family: 'Ubuntu', sans-serif;
 }
 
-@media only screen and (max-width: 600px)  {
+@media only screen and (max-width: 600px) {
 
-    .banner{
+    body .nav{
+        height: 12vh;
+            justify-content: space-around;
+    }
+
+    body .nav img{
+        height: 12vh;
+    }
+
+    body .nav ul {
         display: none;
     }
 
-    .nav{
-        width: 10vw;
-        background: red;
+    #search{
+        margin-left: 0;
+    }
+    .main {
+        background-size: 180%;
     }
 
+    .mainContent{
+        padding: 4vh;
+    }
+
+    .main .mainContent h3 {
+        font-size: 3vh;
+    }
+    .main .mainContent p{
+        font-size: 3.2vw;
+        color: #c5c5c5;
+    }
+    
+    .btn{
+        height: 6vh;
+        width: 24vw;
+        font-size: 2.5vw;
+    }
+    
+    section{
+        flex-direction: column-reverse;
+    }
+    
+    .iframe-container{
+        height: 35vh;
+    }
+    
+    section .overview{
+        align-self: center;
+        width: 80%;
+        margin-top: 5%;   
+        height: fit-content; 
+    }
+
+    section .overview span{
+        font-size: 5.2vw;
+        display: block;
+        text-align: center;
+    }
+
+    section .overview ul{
+        padding-top: 2vh;
+    }
+
+    section .overview ul li{
+        font-size: 3vw;
+    }
+
+    section .mainSection{
+        width: 96%;
+        margin: auto;
+    }
+    section .mainSection p{
+        font-size: 2vh;
+    }
+
+    main .graduateLST{
+        flex-direction: column;
+        gap: 40px;
+    }
+    main .graduateLST .card{
+        min-width: 80%;
+    }
+
+    main .graduateLST .card .imgBx{
+        width: 26vw;
+        height: 26vw;
+    }
+
+    main .graduateLST #alumniFolder{
+        width: 50%
+    }
+        
+    footer .footer{
+        flex-direction: column;
+    }
+
+    footer .footer .f {
+        color: #fff;
+        margin-bottom: 30px;
+    }
+
+    footer .footer .f span{
+        display: block;
+        text-align: center;
+    }
+
+    footer .footer .f ul{
+        margin: 0;
+        width: 100%;
+    }
+
+    footer .footer .f ul li{
+        padding: 1vh;
+    }
 }

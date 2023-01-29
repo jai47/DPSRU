@@ -54,3 +54,24 @@ form button::before{
     padding-top: 1.5vh;
     padding-right: 10vh;
 }
+
+@media only screen and (max-width: 700px) {
+    body .form .imgbx{
+        display: none;
+    }
+
+    body .form{
+        width: 90%;
+    }
+
+    body .form form {
+        width: 100%;
+        gap: 4vh;
+    }
+
+    .bx{
+        padding-top: 1.5vh;
+        padding-right: 0vh;
+    }
+    
+  }

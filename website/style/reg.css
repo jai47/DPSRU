@@ -35,7 +35,7 @@ body .nav a .nav_logo span{
 body .form{
     margin: 5vh 0 5vh 0;
     display: flex;
-    height: 70vh;
+    height: 75vh;
     width: 70%;
     border-radius: 1vh;
     overflow: hidden;
@@ -61,7 +61,7 @@ body .form .img{
     position: absolute;
     border-bottom-left-radius: 1vh;
     border-top-left-radius: 1vh;
-    height: 70vh;
+    height: 75vh;
     width: 50%;
     background: linear-gradient(90deg,rgba(0,0,0,0.5) 80%,rgba(0,0,0,0.5) 90%,#272727 99%,#272727 100%);
 }
@@ -124,13 +124,14 @@ body .form .img{
 body .form form{
     margin: auto;
     height: auto;
-    width: 60vh;
+    width: 66vh;
     display: flex;
     flex-direction: column;
     padding-bottom: 2vh;
     align-items: center;
     font-size: 2.3vh;
     font-family: 'Ubuntu', sans-serif;
+    border-radius: 50px;
 }
 
 form :where(input, select, button){
@@ -225,9 +226,10 @@ body .form form .crsdivclass select{
 }
 
 form .btns{
-    margin-top: 1vh;
+    margin-top: 3vh;
     display: flex;
     width: 100%;
+    gap: 7vh;
     justify-content: space-evenly;
 }
 
@@ -254,6 +256,13 @@ form button:hover{
     cursor: pointer;
     box-shadow: 0.8vh 0.8vh 2vh rgb(51, 51, 51);
     zoom: 103%;
+    transform: translateY(-0.5vh);
+    transition: 0.1s all;
+}
+
+form button:active{
+    box-shadow: 0.4vh 0.4vh 2vh rgb(51, 51, 51);
+    transform: translateY(0);
 }
 
 form button::before{
@@ -266,8 +275,7 @@ form button::before{
     z-index: -1;
     transform: skewX(30deg);
     background: #2081f0;
-    transition: all 0.7s;
-    animation: color_change 5s linear infinite;
+    transition: all 0.6s;
 }
 
 form button:hover::before{
@@ -278,7 +286,38 @@ form button:hover::before{
 
 .bx{
     position: absolute;
-    right: 5vh;
+    right: 4vh;
     padding-top: 0.5vh;
+    cursor: pointer;
     font-size: 3vh;
+}
+
+.bx-hide{
+    color: #444;
+}
+
+@media only screen and (max-width: 600px){
+    .nav{
+        justify-content: center;
+    }
+
+    body .form{
+        width: 95%;
+        height: 80vh;
+        margin: auto;
+    }
+
+    .bgGradient{
+        display: none;
+    }
+
+    body .form .img{
+        display: none;
+    }
+
+    body .form form{
+        height: 95%;
+        width: 97%;
+        padding-bottom: 0;
+    }
 }

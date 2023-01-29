@@ -4,9 +4,8 @@ const session = require("express-session");
 const cookieParser = require('cookie-parser');
 const bcrypt = require("bcrypt");
 const express = require("express");
-const host = '192.168.1.8';
 const app = express();
-const port = 80;
+require("dotenv").config();
 require("./helpers/init_monodb.js")
 require("./helpers/data.writer.js")
 const writeNow = require("./helpers/writer.onCall");
@@ -52,20 +51,37 @@ app.post("/register", upload.single('uploaded_file'), (req, res) => {
 })
 
 app.post("/auth", (req, res) => {
-    const email = req.body.email;
-    let password = req.body.password;
-    doc.findOne({ Email: email }, function (err, user) {
-        if (err) {
-            res.status(500).send("Error fetching user from the database");
-        }
-        const bool = bcrypt.compare(password,user.password);
-        if (bool) {
-            req.session.user = user._id;
-            res.redirect('/profile');
-        } else {
-            res.redirect("/html/login.html");
-        }
-    });
+    try {
+        const email = req.body.email;
+        let password = req.body.password;
+        doc.findOne({ Email: email }, function (err, user) {
+            if (err) {
+                res.status(500).send("Error fetching user from the database");
+            }
+            if (user) {
+                if (user.admin == "1") {
+                    const bool = bcrypt.compareSync(password, user.password);
+                    if(bool){
+                        res.render("admin");
+                    } else {
+                        res.redirect("/html/login.html");
+                    }
+                } else {
+                    const bool = bcrypt.compareSync(password, user.password);
+                    if (bool) {
+                        req.session.user = user._id;
+                        res.redirect('/profile');
+                    } else {
+                        res.redirect("/html/login.html");
+                    }
+                }
+            } else {
+                res.redirect("/html/login.html");
+            }
+        });
+    }catch(error){
+        res.redirect("/html/login.html");
+    }
 })
 
 app.get("/profile",(req,res)=>{
@@ -104,7 +120,7 @@ app.get('/approve', async function(req, res) {
     // console.log(req.query.variable);
     const aprvUser = await aprv.findOne({ "_id": `${req.query.variable}` });
     const MongoClient = require('mongodb').MongoClient;
-    const uri = "mongodb+srv://jaimishra2004:7october2004@cluster0.cmv7njg.mongodb.net/test?retryWrites=true&w=majority";
+    const uri = process.env.uri;
     const client = new MongoClient(uri, { useNewUrlParser: true });
     client.connect(err => {
         const targetCollection = client.db("test").collection("datas");
@@ -128,18 +144,18 @@ app.get('/reject', function(req, res) {
             console.log(err);
             return res.status(500).send('Internal Server Error');
         }
-        console.log("removed");
+        console.log(`${result.title} `+`${result.F_NAME} `+`${result.L_NAME} `+" is removed");
         writeNow();
     });
     res.send({approved:true});
 });
 
 app.get("*", (req,res)=>{
-    res.send("<h1 style=' font-size: 50vh;'>404</h1><p>Page Not found</p>")
+    res.send("<h1 style=' font-size: 50vh; text-align: center;'>404</h1><p>Page Not found</p>")
 })
 
 
-app.listen(port, host, () => {
-    console.log(`Serving @ http://${host}:${port}/`);
-    open(`http://${host}:${port}/`)
+app.listen(process.env.port, process.env.host, () => {
+    console.log(`Serving @ http://${process.env.host}:${process.env.port}/`);
+    open(`http://${process.env.host}:${process.env.port}/`)
 })

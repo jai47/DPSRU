@@ -1,3 +1,4 @@
+// alert('this is a demo website');
 let menu = document.getElementById('popup');
 let yearList = document.getElementById('yearList');
 let folder = document.getElementById('folder');
@@ -41,7 +42,7 @@ function showList(e){
 
 var xhReq = new XMLHttpRequest();
 xhReq.open("GET", '/script/data.json', false);
-xhReq.send(null);
+xhReq.send();
 
 var jsonObject = JSON.parse(xhReq.responseText);
  

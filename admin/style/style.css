@@ -113,6 +113,11 @@ body .nav li:hover::after{
     width: 100%;
 }
 
+body .nav li a{
+    text-decoration: none;
+    color: black;
+}
+
 #folder{
     height: 75%;
     width: 85%;
