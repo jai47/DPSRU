@@ -23,6 +23,7 @@ app.use("/", express.static('website'));
 app.use("/uploads", express.static('uploads'));
 app.use("/reg", express.static('website/html/registration.html'));
 app.use("/admin", express.static('admin'));
+
 app.use(session({
     resave: true,
     saveUninitialized: true,
